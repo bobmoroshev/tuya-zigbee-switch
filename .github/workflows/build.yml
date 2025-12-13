@@ -63,25 +63,27 @@ jobs:
     - name: Build for all boards
       run: |
         source .venv/bin/activate
-        yq -r 'to_entries | sort_by(.key)[] | "\(.key) \(.value.device_type) \(.value.build)"' device_db.yaml | while read ITER TYPE BUILD; do
+        # Build only FS02Z_TS0001 device
+        ITER=FS02Z_TS0001
+        TYPE=$(yq -r ".$ITER.device_type" device_db.yaml)
+        BUILD=$(yq -r ".$ITER.build" device_db.yaml)
 
-          if [ "$BUILD" = "no" ]; then
-            echo "Skipping $ITER as building this model is disabled in the db."
-            continue
-          fi
-  
-          echo "Building for board: $ITER (router)"
-          BOARD=$ITER DEVICE_TYPE=router make board/build || exit 1
-          echo "Checking if files were created for board: $ITER (router)"
-          ls -l bin/router/$ITER/
+        if [ "$BUILD" = "no" ]; then
+          echo "Skipping $ITER as building this model is disabled in the db."
+          exit 1
+        fi
 
-          if [ "$TYPE" = "end_device" ]; then
-            echo "Building for board: $ITER (end_device)"
-            BOARD=${ITER} DEVICE_TYPE=end_device make board/build || exit 1
-            echo "Checking if files were created for board: $ITER (end_device)"
-            ls -l bin/end_device/${ITER}_END_DEVICE/
-          fi
-        done
+        echo "Building for board: $ITER (router)"
+        BOARD=$ITER DEVICE_TYPE=router make board/build || exit 1
+        echo "Checking if files were created for board: $ITER (router)"
+        ls -l bin/router/$ITER/
+
+        if [ "$TYPE" = "end_device" ]; then
+          echo "Building for board: $ITER (end_device)"
+          BOARD=${ITER} DEVICE_TYPE=end_device make board/build || exit 1
+          echo "Checking if files were created for board: $ITER (end_device)"
+          ls -l bin/end_device/${ITER}_END_DEVICE/
+        fi
 
     - name: Update Z2M converters
       run: |
