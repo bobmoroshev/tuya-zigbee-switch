@@ -229,6 +229,7 @@ CONFIGS = [
     "num4zd6s;TS0012-EKF;BA0u;LD7;SC2u;RC0;SC3u;RB4;",
     "hyziup76;TS0001-GS;BA0u;LC0;SB4u;RC2;",
     "wxtmgjbd;TS0002-GS;BA0u;LC0;SB4u;RC2;SB5u;RC3;",
+    "fdxihpp7;WHD02-FS02Z;BD2u;LB4i;SB5u;RC3;",
     "zw7yf6yk;TS0001-GIR;BB1u;LC3i;SB5u;RD2;",
     "6axxqqi2;TS0001-GIR-1;BC2u;LB5i;SB4u;RD2;",
     "zmy4lslw;TS0002-GIR;BD2u;LC2;SB5u;RC4;SB4u;RC3;",
@@ -308,10 +309,10 @@ CONFIGS = [
     "Tuya-TS0012-custom;TS0012-custom;BA0f;LD7;SC2f;RC0;SC3f;RB4;",
     "Tuya-TS0012-custom;TS0042-CUSTOM;BA0f;LD7;SC2f;RC0;SC3f;RB4;",
     "Tuya-TS0012-custom;TS0012-custom-end-device;BA0f;LD7;SC2f;RC0;SC3f;RB4;",
-    "zmlunnhy;Zemi-2-gang;SC3U;RB5C4;IB7;SD2U;RC2D4;ID7;",
-    "zmlunnhy;Zemi-2-gang-ED;SC3U;RB5C4;IB7;SD2U;RC2D4;ID7;",
-    "Zemi-2-gang;Zemi-2-gang;SC3U;RB5C4;IB7;SD2U;RC2D4;ID7;",
-    "Zemi-2-gang;Zemi-2-gang-ED;SC3U;RB5C4;IB7;SD2U;RC2D4;ID7;",
+    "zmlunnhy;Zemi-2-gang;SC3u;RC2D4;IB7;SD2u;RB5C4;ID7;M;",
+    "zmlunnhy;Zemi-2-gang-ED;SC3u;RC2D4;IB7;SD2u;RB5C4;ID7;M;",
+    "Zemi-2-gang;Zemi-2-gang;SC3u;RC2D4;IB7;SD2u;RB5C4;ID7;M;",
+    "Zemi-2-gang;Zemi-2-gang-ED;SC3u;RC2D4;IB7;SD2u;RB5C4;ID7;M;",
     "TUYA;DEV-ZTU2;LD7;SA0u;RC1;IB6;M;",
 ]
 
