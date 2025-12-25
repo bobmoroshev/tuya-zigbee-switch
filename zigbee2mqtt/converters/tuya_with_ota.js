@@ -36,7 +36,6 @@ const tuyaModels = [
     "TS0002",
     "TS0002_basic",
     "TS0002_limited",
-    "TS0002_switch_module_1",
     "TS0003",
     "TS0003_switch_3_gang",
     "TS0003_switch_module_2",
@@ -61,8 +60,10 @@ const tuyaModels = [
 ];
 
 const tuyaMultiplePinoutsModels = [
+    "TS0001_switch_module",
     "TS0001_switch_module_1",
-    "TS0002_switch_module_1",
+    "TS0002_basic",
+    "TS0002_limited",
     "TS0004_switch_module_2",
 ];
 
@@ -90,6 +91,7 @@ for (let definition of tuyaDefinitions) {
 }
 
 const moesModels = [
+    "ZM4LT2",
     "ZS-EUB_1gang",
 ];
 
